@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Get Stats</title>
+    <meta charset="UTF-8">
+    </head>
+    <body>
+    <h1>Get Stats</h1>
+    <hr>
+
+    <p>Here is everyone attending the <b><%= slug %></b> event.</p>
+
+    <ol>
+    <% for (let email of emails) { %>
+        <li><%= email %></li>
+    <% }; %>
+    </ol>
+
+    <a href="/admin">Return to the Admin page</a>
+
+    </body>
+</html>
+

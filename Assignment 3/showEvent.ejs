@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Show Event</title>
+    <meta charset="UTF-8">
+    <script src="qrcode.js"></script>
+    </head>
+    <body>
+    <h1>Mark your attendance for this event.</h1>
+    <hr>
+
+    <div id="placeHolder"></div>
+
+    <a href="http://localhost:8080/register?slug=<%= slug %>">Or simulate someone attending this event by clicking here.</a>
+
+    <script>
+    var typeNumber = 4;
+    var errorCorrectionLevel = 'M';
+    var qr = qrcode(typeNumber, errorCorrectionLevel);
+    qr.addData("http://localhost:8080/register?slug=<%= slug %>");
+    qr.make();
+    document.getElementById('placeHolder').innerHTML = qr.createImgTag(8);
+    </script>
+
+    </body>
+</html>
+

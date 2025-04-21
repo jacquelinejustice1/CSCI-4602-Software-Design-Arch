@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Admin Page</title>
+    <meta charset="UTF-8">
+    </head>
+    <body>
+    <h1>Make a new Event</h1>
+    <hr>
+
+    <form action="/makeEvent" method="post">
+      <label for="name">Enter event name:</label> <input type="text" id="name" name="name" value="">
+      <label for="time">Enter event time:</label> <input type="text" id="time" name="time" value="">
+      <label for="slug">Enter event host:</label> <input type="text" id="host" name="host" value="">
+      <label for="slug">Enter event slug:</label> <input type="text" id="slug" name="slug" value="">
+
+      <input type="submit" value="OK">
+    </form>
+
+    <h1>All Events</h1>
+    <hr>
+
+    <ul>
+      <% for (let slug of slugs) { %>
+        <li>
+            <%= slug %>
+            <a href="/showEvent?slug=<%= slug %>">Show QR Code</a>
+            <a href="/getStats?slug=<%= slug %>">Get Stats</a>
+        </li>
+      <% }; %>
+    </ul>
+    </body>
+</html>
+

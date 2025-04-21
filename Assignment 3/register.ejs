@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Register for event.</title>
+    <meta charset="UTF-8">
+    </head>
+    <body>
+    <h1>Register for an event.</h1>
+    <hr>
+
+    <form action="/submitAttendance" method="post">
+      <div>
+      <label for="name">Enter your name:</label> <input type="text" id="name" name="name" value="">
+      </div>
+
+      <div>
+      <label for="email">Enter your email:</label> <input type="text" id="email" name="email" value="">
+      </div>
+
+      <input type="hidden" name="slug" value="<%= slug %>">
+
+      <div>
+      <input type="submit" value="OK">
+      </div>
+    </form>
+</html>
+
